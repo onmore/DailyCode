@@ -33,12 +33,13 @@
             // 
             // office2swfserviceProcessInstaller
             // 
+            this.office2swfserviceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
             this.office2swfserviceProcessInstaller.Password = null;
             this.office2swfserviceProcessInstaller.Username = null;
             // 
             // office2swfserviceInstaller
             // 
-            this.office2swfserviceInstaller.ServiceName = "Service1";
+            this.office2swfserviceInstaller.ServiceName = "office2wsfService";
             // 
             // ProjectInstaller
             // 

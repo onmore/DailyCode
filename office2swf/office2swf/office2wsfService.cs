@@ -9,9 +9,9 @@ using System.Text;
 
 namespace office2swf
 {
-    public partial class Service1 : ServiceBase
+    public partial class office2wsfService : ServiceBase
     {
-        public Service1()
+        public office2wsfService()
         {
             InitializeComponent();
         }

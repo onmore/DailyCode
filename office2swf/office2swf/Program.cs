@@ -16,7 +16,7 @@ namespace office2swf
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[]
             {
-                new Service1()
+                new office2wsfService()
             };
             ServiceBase.Run(ServicesToRun);
         }

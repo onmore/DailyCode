@@ -1,6 +1,6 @@
 ﻿namespace office2swf
 {
-    partial class Service1
+    partial class office2wsfService
     {
         /// <summary> 
         /// 必需的设计器变量。
