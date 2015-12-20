@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinuxSocketIoModel", "Linux
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ehcobylibevent", "ehcobylibevent\ehcobylibevent.vcxproj", "{3DBFA66B-FE57-413C-A945-13AD67D18E25}"
 EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "client", "client\client.pyproj", "{2A76838E-E527-4D98-AF35-F4D4889A17DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,12 @@ Global
 		{3DBFA66B-FE57-413C-A945-13AD67D18E25}.Release|x64.Build.0 = Release|x64
 		{3DBFA66B-FE57-413C-A945-13AD67D18E25}.Release|x86.ActiveCfg = Release|Win32
 		{3DBFA66B-FE57-413C-A945-13AD67D18E25}.Release|x86.Build.0 = Release|Win32
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Release|x64.ActiveCfg = Release|Any CPU
+		{2A76838E-E527-4D98-AF35-F4D4889A17DB}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
