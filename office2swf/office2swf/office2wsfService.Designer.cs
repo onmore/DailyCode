@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.ServiceName = "Service1";
+            // 
+            // office2wsfService
+            // 
+            this.ServiceName = "office2wsfService";
+
         }
 
         #endregion

@@ -18,10 +18,12 @@ namespace office2swf
 
         protected override void OnStart(string[] args)
         {
+            string str = "";
         }
 
         protected override void OnStop()
         {
+            string str = "";
         }
     }
 }

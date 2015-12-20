@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.office2swfserviceProcessInstaller = new System.ServiceProcess.ServiceProcessInstaller();
-            this.office2swfserviceInstaller = new System.ServiceProcess.ServiceInstaller();
+            this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
+            this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
             // 
-            // office2swfserviceProcessInstaller
+            // serviceProcessInstaller1
             // 
-            this.office2swfserviceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
-            this.office2swfserviceProcessInstaller.Password = null;
-            this.office2swfserviceProcessInstaller.Username = null;
+            this.serviceProcessInstaller1.Account = System.ServiceProcess.ServiceAccount.LocalSystem;
+            this.serviceProcessInstaller1.Password = null;
+            this.serviceProcessInstaller1.Username = null;
             // 
-            // office2swfserviceInstaller
+            // serviceInstaller1
             // 
-            this.office2swfserviceInstaller.ServiceName = "office2wsfService";
+            this.serviceInstaller1.ServiceName = "office2wsfService";
             // 
             // ProjectInstaller
             // 
             this.Installers.AddRange(new System.Configuration.Install.Installer[] {
-            this.office2swfserviceProcessInstaller,
-            this.office2swfserviceInstaller});
+            this.serviceProcessInstaller1,
+            this.serviceInstaller1});
 
         }
 
         #endregion
 
-        private System.ServiceProcess.ServiceProcessInstaller office2swfserviceProcessInstaller;
-        private System.ServiceProcess.ServiceInstaller office2swfserviceInstaller;
+        private System.ServiceProcess.ServiceProcessInstaller serviceProcessInstaller1;
+        private System.ServiceProcess.ServiceInstaller serviceInstaller1;
     }
 }
