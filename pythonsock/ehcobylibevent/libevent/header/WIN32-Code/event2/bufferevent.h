@@ -52,23 +52,23 @@
   Bufferevents come in several flavors, including:
 
   <dl>
-    <dt>Socket-based bufferevents</dt>
-      <dd>A bufferevent that reads and writes data onto a network
-          socket. Created with bufferevent_socket_new().</dd>
+	<dt>Socket-based bufferevents</dt>
+	  <dd>A bufferevent that reads and writes data onto a network
+		  socket. Created with bufferevent_socket_new().</dd>
 
-    <dt>Paired bufferevents</dt>
-      <dd>A pair of bufferevents that send and receive data to one
-          another without touching the network.  Created with
-          bufferevent_pair_new().</dd>
+	<dt>Paired bufferevents</dt>
+	  <dd>A pair of bufferevents that send and receive data to one
+		  another without touching the network.  Created with
+		  bufferevent_pair_new().</dd>
 
-    <dt>Filtering bufferevents</dt>
-       <dd>A bufferevent that transforms data, and sends or receives it
-          over another underlying bufferevent.  Created with
-          bufferevent_filter_new().</dd>
+	<dt>Filtering bufferevents</dt>
+	   <dd>A bufferevent that transforms data, and sends or receives it
+		  over another underlying bufferevent.  Created with
+		  bufferevent_filter_new().</dd>
 
-    <dt>SSL-backed bufferevents</dt>
-      <dd>A bufferevent that uses the openssl library to send and
-          receive data over an encrypted connection. Created with
+	<dt>SSL-backed bufferevents</dt>
+	  <dd>A bufferevent that uses the openssl library to send and
+		  receive data over an encrypted connection. Created with
 	  bufferevent_openssl_socket_new() or
 	  bufferevent_openssl_filter_new().</dd>
   </dl>
@@ -91,9 +91,9 @@ extern "C" {
 
 /** @name Bufferevent event codes
 
-    These flags are passed as arguments to a bufferevent's event callback.
+	These flags are passed as arguments to a bufferevent's event callback.
 
-    @{
+	@{
 */
 #define BEV_EVENT_READING	0x01	/**< error encountered while reading */
 #define BEV_EVENT_WRITING	0x02	/**< error encountered while writing */
@@ -173,9 +173,9 @@ enum bufferevent_options {
 
   @param base the event base to associate with the new bufferevent.
   @param fd the file descriptor from which data is read and written to.
-	    This file descriptor is not allowed to be a pipe(2).
-	    It is safe to set the fd to -1, so long as you later
-	    set it with bufferevent_setfd or bufferevent_socket_connect().
+		This file descriptor is not allowed to be a pipe(2).
+		It is safe to set the fd to -1, so long as you later
+		set it with bufferevent_setfd or bufferevent_socket_connect().
   @param options Zero or more BEV_OPT_* flags
   @return a pointer to a newly allocated bufferevent struct, or NULL if an
 	  error occurred
@@ -197,7 +197,7 @@ struct bufferevent *bufferevent_socket_new(struct event_base *base, evutil_socke
    yielded when it is done connecting.
 
    @param bufev an existing bufferevent allocated with
-       bufferevent_socket_new().
+	   bufferevent_socket_new().
    @param addr the address we should connect to
    @param socklen The length of the address
    @return 0 on success, -1 on failure.
@@ -211,28 +211,28 @@ struct evdns_base;
 
    @param bufev An existing bufferevent allocated with bufferevent_socket_new()
    @param evdns_base Optionally, an evdns_base to use for resolving hostnames
-      asynchronously. May be set to NULL for a blocking resolve.
+	  asynchronously. May be set to NULL for a blocking resolve.
    @param family A preferred address family to resolve addresses to, or
-      AF_UNSPEC for no preference.  Only AF_INET, AF_INET6, and AF_UNSPEC are
-      supported.
+	  AF_UNSPEC for no preference.  Only AF_INET, AF_INET6, and AF_UNSPEC are
+	  supported.
    @param hostname The hostname to resolve; see below for notes on recognized
-      formats
+	  formats
    @param port The port to connect to on the resolved address.
    @return 0 if successful, -1 on failure.
 
    Recognized hostname formats are:
 
-       www.example.com	(hostname)
-       1.2.3.4		(ipv4address)
-       ::1		(ipv6address)
-       [::1]		([ipv6address])
+	   www.example.com	(hostname)
+	   1.2.3.4		(ipv4address)
+	   ::1		(ipv6address)
+	   [::1]		([ipv6address])
 
    Performance note: If you do not provide an evdns_base, this function
    may block while it waits for a DNS response.	 This is probably not
    what you want.
  */
 int bufferevent_socket_connect_hostname(struct bufferevent *,
-    struct evdns_base *, int, const char *, int);
+	struct evdns_base *, int, const char *, int);
 
 /**
    Return the error code for the last failed DNS lookup attempt made by
@@ -251,7 +251,7 @@ int bufferevent_socket_get_dns_error(struct bufferevent *bev);
 
   @param base an event_base returned by event_init()
   @param bufev a bufferevent struct returned by bufferevent_new()
-     or bufferevent_socket_new()
+	 or bufferevent_socket_new()
   @return 0 if successful, or -1 if an error occurred
   @see bufferevent_new()
  */
@@ -297,8 +297,8 @@ void bufferevent_free(struct bufferevent *bufev);
   @see bufferevent_new()
   */
 void bufferevent_setcb(struct bufferevent *bufev,
-    bufferevent_data_cb readcb, bufferevent_data_cb writecb,
-    bufferevent_event_cb eventcb, void *cbarg);
+	bufferevent_data_cb readcb, bufferevent_data_cb writecb,
+	bufferevent_event_cb eventcb, void *cbarg);
 
 /**
   Changes the file descriptor on which the bufferevent operates.
@@ -335,7 +335,7 @@ struct bufferevent *bufferevent_get_underlying(struct bufferevent *bufev);
   @see bufferevent_write_buffer()
   */
 int bufferevent_write(struct bufferevent *bufev,
-    const void *data, size_t size);
+	const void *data, size_t size);
 
 
 /**
@@ -452,7 +452,7 @@ short bufferevent_get_enabled(struct bufferevent *bufev);
   @param timeout_write the write timeout, or NULL
  */
 int bufferevent_set_timeouts(struct bufferevent *bufev,
-    const struct timeval *timeout_read, const struct timeval *timeout_write);
+	const struct timeval *timeout_read, const struct timeval *timeout_write);
 
 /**
   Sets the watermarks for read and write events.
@@ -473,7 +473,7 @@ int bufferevent_set_timeouts(struct bufferevent *bufev,
 */
 
 void bufferevent_setwatermark(struct bufferevent *bufev, short events,
-    size_t lowmark, size_t highmark);
+	size_t lowmark, size_t highmark);
 
 /**
    Acquire the lock on a bufferevent.  Has no effect if locking was not
@@ -511,8 +511,8 @@ enum bufferevent_flush_mode {
    @return -1 on failure, 0 if no data was produces, 1 if data was produced
  */
 int bufferevent_flush(struct bufferevent *bufev,
-    short iotype,
-    enum bufferevent_flush_mode mode);
+	short iotype,
+	enum bufferevent_flush_mode mode);
 
 /**
    @name Filtering support
@@ -530,52 +530,52 @@ enum bufferevent_filter_result {
 	BEV_NEED_MORE = 1,
 
 	/** the filter encountered a critical error, no further data
-	    can be processed. */
+		can be processed. */
 	BEV_ERROR = 2
 };
 
 /** A callback function to implement a filter for a bufferevent.
 
-    @param src An evbuffer to drain data from.
-    @param dst An evbuffer to add data to.
-    @param limit A suggested upper bound of bytes to write to dst.
-       The filter may ignore this value, but doing so means that
-       it will overflow the high-water mark associated with dst.
-       -1 means "no limit".
-    @param mode Whether we should write data as may be convenient
-       (BEV_NORMAL), or flush as much data as we can (BEV_FLUSH),
-       or flush as much as we can, possibly including an end-of-stream
-       marker (BEV_FINISH).
-    @param ctx A user-supplied pointer.
+	@param src An evbuffer to drain data from.
+	@param dst An evbuffer to add data to.
+	@param limit A suggested upper bound of bytes to write to dst.
+	   The filter may ignore this value, but doing so means that
+	   it will overflow the high-water mark associated with dst.
+	   -1 means "no limit".
+	@param mode Whether we should write data as may be convenient
+	   (BEV_NORMAL), or flush as much data as we can (BEV_FLUSH),
+	   or flush as much as we can, possibly including an end-of-stream
+	   marker (BEV_FINISH).
+	@param ctx A user-supplied pointer.
 
-    @return BEV_OK if we wrote some data; BEV_NEED_MORE if we can't
-       produce any more output until we get some input; and BEV_ERROR
-       on an error.
+	@return BEV_OK if we wrote some data; BEV_NEED_MORE if we can't
+	   produce any more output until we get some input; and BEV_ERROR
+	   on an error.
  */
 typedef enum bufferevent_filter_result (*bufferevent_filter_cb)(
-    struct evbuffer *src, struct evbuffer *dst, ev_ssize_t dst_limit,
-    enum bufferevent_flush_mode mode, void *ctx);
+	struct evbuffer *src, struct evbuffer *dst, ev_ssize_t dst_limit,
+	enum bufferevent_flush_mode mode, void *ctx);
 
 /**
    Allocate a new filtering bufferevent on top of an existing bufferevent.
 
    @param underlying the underlying bufferevent.
    @param input_filter The filter to apply to data we read from the underlying
-     bufferevent
+	 bufferevent
    @param output_filter The filer to apply to data we write to the underlying
-     bufferevent
+	 bufferevent
    @param options A bitfield of bufferevent options.
    @param free_context A function to use to free the filter context when
-     this bufferevent is freed.
+	 this bufferevent is freed.
    @param ctx A context pointer to pass to the filter functions.
  */
 struct bufferevent *
 bufferevent_filter_new(struct bufferevent *underlying,
-		       bufferevent_filter_cb input_filter,
-		       bufferevent_filter_cb output_filter,
-		       int options,
-		       void (*free_context)(void *),
-		       void *ctx);
+			   bufferevent_filter_cb input_filter,
+			   bufferevent_filter_cb output_filter,
+			   int options,
+			   void (*free_context)(void *),
+			   void *ctx);
 /**@}*/
 
 /**
@@ -589,7 +589,7 @@ bufferevent_filter_new(struct bufferevent *underlying,
    @return 0 on success, -1 on failure.
  */
 int bufferevent_pair_new(struct event_base *base, int options,
-    struct bufferevent *pair[2]);
+	struct bufferevent *pair[2]);
 
 /**
    Given one bufferevent returned by bufferevent_pair_new(), returns the
@@ -617,13 +617,13 @@ struct bufferevent_rate_limit_group;
    of bufferevents.
 
    @param read_rate The maximum number of bytes to read per tick on
-     average.
+	 average.
    @param read_burst The maximum number of bytes to read in any single tick.
    @param write_rate The maximum number of bytes to write per tick on
-     average.
+	 average.
    @param write_burst The maximum number of bytes to write in any single tick.
    @param tick_len The length of a single tick.	 Defaults to one second.
-     Any fractions of a millisecond are ignored.
+	 Any fractions of a millisecond are ignored.
 
    Note that all rate-limits hare are currently best-effort: future versions
    of Libevent may implement them more tightly.
@@ -635,8 +635,8 @@ struct ev_token_bucket_cfg *ev_token_bucket_cfg_new(
 
 /** Free all storage held in 'cfg'.
 
-    Note: 'cfg' is not currently reference-counted; it is not safe to free it
-    until no bufferevent is using it.
+	Note: 'cfg' is not currently reference-counted; it is not safe to free it
+	until no bufferevent is using it.
  */
 void ev_token_bucket_cfg_free(struct ev_token_bucket_cfg *cfg);
 
@@ -652,7 +652,7 @@ void ev_token_bucket_cfg_free(struct ev_token_bucket_cfg *cfg);
    Return 0 on sucess, -1 on failure.
  */
 int bufferevent_set_rate_limit(struct bufferevent *bev,
-    struct ev_token_bucket_cfg *cfg);
+	struct ev_token_bucket_cfg *cfg);
 
 /**
    Create a new rate-limit group for bufferevents.  A rate-limit group
@@ -660,8 +660,8 @@ int bufferevent_set_rate_limit(struct bufferevent *bev,
    by all of its bufferevents.
 
    @param base An event_base to run any necessary timeouts for the group.
-      Note that all bufferevents in the group do not necessarily need to share
-      this event_base.
+	  Note that all bufferevents in the group do not necessarily need to share
+	  this event_base.
    @param cfg The rate-limit for this group.
 
    Note that all rate-limits hare are currently best-effort: future versions
@@ -719,7 +719,7 @@ void bufferevent_rate_limit_group_free(struct bufferevent_rate_limit_group *);
    Return 0 on success and -1 on failure.
  */
 int bufferevent_add_to_rate_limit_group(struct bufferevent *bev,
-    struct bufferevent_rate_limit_group *g);
+	struct bufferevent_rate_limit_group *g);
 
 /** Remove 'bev' from its current rate-limit group (if any). */
 int bufferevent_remove_from_rate_limit_group(struct bufferevent *bev);
@@ -802,8 +802,8 @@ int bufferevent_rate_limit_group_decrement_write(
  * ever read on grp, and the variable pointed to by total_written_out to the
  * total number of bytes ever written on grp. */
 void bufferevent_rate_limit_group_get_totals(
-    struct bufferevent_rate_limit_group *grp,
-    ev_uint64_t *total_read_out, ev_uint64_t *total_written_out);
+	struct bufferevent_rate_limit_group *grp,
+	ev_uint64_t *total_read_out, ev_uint64_t *total_written_out);
 
 /**
  * Reset the total bytes read/written on a group.

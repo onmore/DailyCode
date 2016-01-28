@@ -18,6 +18,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="socketclient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="socketclientDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -27,15 +33,15 @@
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="socketclient.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
+    <ClCompile Include="socketclient.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="socketclient.cpp">
+    <ClCompile Include="socketclientDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,10 +51,12 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="small.ico">
+    <None Include="res\socketclient.rc2">
       <Filter>资源文件</Filter>
-    </Image>
-    <Image Include="socketclient.ico">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\socketclient.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
